@@ -36,6 +36,11 @@ void TMember::set_coeff(int coeff)
 
 
 
+bool Polynomial::operator<(const TMember& c1, const TMember& c2)
+{
+    return !(c1.FDegree<c2.FDegree);
+}
+
 bool Polynomial::operator==(const TMember& c1, const TMember& c2)
 {
     return (c1.FCoeff == c2.FCoeff &&
@@ -76,13 +81,13 @@ std::string Polynomial::TMember::to_string()
 
 
 
-TMember* TMember::diff()
+TMember TMember::diff()
 {
-    if(this->FDegree == 0) return new TMember();
+    if(this->FDegree == 0) return TMember();
 
     int new_coeff = this->FCoeff * this->FDegree;
     int new_deg = this->FDegree - 1;
-    return new TMember(new_coeff, new_deg);
+    return TMember(new_coeff, new_deg);
 }
 
 double TMember::calc(int x) {

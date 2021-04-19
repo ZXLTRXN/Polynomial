@@ -141,11 +141,10 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="TMember.cpp" />
-    <ClCompile Include="Tpoly.cpp" />
+    <ClCompile Include="TPoly.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="TMember.h" />
-    <ClInclude Include="TPoly.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

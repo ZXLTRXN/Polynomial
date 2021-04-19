@@ -16,11 +16,12 @@ namespace Polynomial
         void set_degree(int deg);
         void set_coeff(int coeff);
 
+        bool friend operator<(const TMember& c1, const TMember& c2);
         bool friend operator==(const TMember& c1, const TMember& c2);
         bool friend operator!= (const TMember& c1, const TMember& c2);
         std::string to_string();
 
-        TMember* diff();
+        TMember diff();
         double calc(int x);
 
     private:
