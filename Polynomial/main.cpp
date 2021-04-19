@@ -8,24 +8,16 @@ using namespace std;
 int main()
 {
     
-    TPoly pol1 = TPoly(1,2);
-    TPoly pol2 = TPoly(3, 4);
-    TPoly pol3 = TPoly(1, 2);
-    TPoly pol4 = TPoly(3, 4);
-    TPoly pol5 = TPoly(1,2);
+    TPoly p1 = TPoly(2,3);
+    TPoly p2 = TPoly(1, 2);
+    TPoly p3 = TPoly(4, 0);
+    TPoly p4 = TPoly(0, 0);
 
+    TPoly r1 = p1+p2-p3;
+    TPoly r2 = r1.diff();
+    double r3 = r1.calc(2);
 
-    TPoly polr = pol4 - pol5;
-    TPoly polr2 = pol2 + pol3;
-    TPoly polr3 = polr2 * polr;
-    TPoly polr4 = pol1.diff();
+    //cout << r3 << endl;
+    cout << r2.to_string() << endl;
 
-    //TMember m = polr.get_elem(0);
-    //cout << m.to_string() << endl;
-    //cout << polr.degree() << endl;
-    //cout << polr.coeff(1) << endl;
-    cout << polr4.to_string() <<endl;
-
-    //bool a = (polr == polr2);
-    //cout << a << endl;
 }

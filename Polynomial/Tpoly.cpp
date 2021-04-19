@@ -1,27 +1,9 @@
-//#include "TPoly.h"
-
-//using namespace Polynomial;
 #include "TMember.h"
 #include <iostream> 
 #include <algorithm>
 #include<vector>
-using namespace std;
 
-//TPoly::TPoly()
-//{
-//	TMember member = TMember();
-//	this->push_back(member);
-//}
-//
-//TPoly::TPoly(int coeff, int deg)
-//{
-//	TMember member = TMember(coeff, deg);
-//	this->push_back(member);
-//}
-//
-//TMember& TPoly::get_elem(int pos) {
-//	return this->at(pos);
-//}
+using namespace std;
 
 namespace Polynomial
 {
@@ -104,7 +86,9 @@ namespace Polynomial
 
         TPoly operator +(const TPoly& i) {
 			TPoly res = TPoly();
+            res.pop_back();
 			TPoly additional = TPoly();
+            additional.pop_back();
             for (int j = 0; j < i.size(); j++) {
                 additional.push_back(i.at(j));
             }
@@ -133,7 +117,9 @@ namespace Polynomial
 
         TPoly operator -(const TPoly& i) {
             TPoly res = TPoly();
+            res.pop_back();
             TPoly additional = TPoly();
+            additional.pop_back();
             for (int j = 0; j < i.size(); j++) {
                 additional.push_back(i.at(j));
             }
